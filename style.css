@@ -1,0 +1,113 @@
+:root{
+    --cor-um: #9ca3af;
+    --cor-dois: black;
+    --cor-tres: white;
+
+    --fundo: #f3f4f6;
+    --fundo-dois: #9ca3af;
+    --fundo-tres: #d1d5db;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--cor-um);
+    flex-grow: 1;
+}
+
+
+nav{
+    display: flex;
+    gap: 20px;
+}
+
+nav > li > input{
+    padding: 5px 10px;
+    color: var(--cor-dois);
+}
+
+nav > li > button{
+    padding: 5px 10px;
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    flex-grow: 9;
+}
+
+main > div {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+main > div >#img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+    width:  40%;
+    height: 70%;
+    background-color: var(--fundo-dois);
+}
+main > div > #img> img{
+    width: 100%;
+    height: 100%;
+}
+
+main > div > #texto{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width:  40%;
+    height: 70%;
+    gap: 30px;
+}
+
+main > div > #texto > p{
+    background-color: var(--fundo-tres);
+    padding: 10px;
+}
+
+main > div > #texto > #voltar-avancar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+main > div > #texto > #voltar-avancar > button{
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+main > div > #texto > #voltar-avancar > button:hover{
+    background-color: var(--fundo-dois);
+}
