@@ -13,17 +13,45 @@ let currentIndex = 0;
 
 // Mapeamento de casas para classes CSS
 const casas = {
-    Gryffindor: "grifinoria",
-    Slytherin: "sonserina",
-    Hufflepuff: "lufa-lufa",
-    Ravenclaw: "corvinal",
+    Gryffindor: "Grifinoria",
+    Slytherin: "Sonserina",
+    Hufflepuff: "Lufa-Lufa",
+    Ravenclaw: "Corvinal",
+};
+
+// Mapeamento de especie para classes CSS
+const especies = {
+    human: "Humano",
+    ghost: "Fantasma",
+    "house-elf": "Elf de Casa",
+    "half-giant": "Meio-Gigante",
+    werewolf: "Lobisomem",
+    snake: "Serpente",
+    cat: "Gato",
+    owl: "Coruja",
+    "half-human": "Meio-Humano",
+    phoenix: "Fênix",
+    dog: "Cachorro",
+    toad: "Sapo",
+    goblin: "Duende",
+    "pygmy puff": "Puf-Pygmio",
+    vampire: "Vampiro",
+    acromantula: "Acromântula",
+    centaur: "Centauro",
+    hippogriff: "Hipogrifo",
+    giant: "Gigante",
+    selkie: "Selkie",
+    cephalopod: "Cefalópode",
+    dragon: "Dragão",
+    "three-headed dog": "Cão de Três Cabeças",
+    poltergeist: "Poltergeist",
+    
 };
 
 // Função para buscar personagens da API
 async function buscaPersonagem() {
     const response = await fetch("https://hp-api.onrender.com/api/characters");
     characters = await response.json();
-    
     mostraPersonagem(currentIndex);
 }
 
@@ -46,14 +74,15 @@ function mudaTema(house) {
 function mostraPersonagem(index) {
     const character = characters[index];
     nameElement.textContent = `Nome: ${character.name}`;
-    houseElement.textContent = `Casa: ${character.house || "Desconhecida"}`;
+    houseElement.textContent = `Casa: ${casas[character.house] || "Desconhecida"}`;
     actorElement.textContent = `Ator: ${character.actor}`;
-    speciesElement.textContent = `Espécie: ${character.species}`;
+    speciesElement.textContent = `Espécie: ${especies[character.species] || character.species}`;
     imgElement.src = character.image || "./img/hogwarts.jpeg";
 
     // Alterar o tema com base na casa
     mudaTema(character.house);
 }
+
 
 // Event listeners para os botões
 prevBtn.addEventListener("click", () => {
@@ -97,7 +126,7 @@ searchBtn.addEventListener("click", () => {
         } else {
             alert("Número fora do intervalo de personagens!");
         }
-    }   
+    } 
 });
 
 // Iniciar a aplicação
