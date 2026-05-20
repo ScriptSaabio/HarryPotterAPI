@@ -9,7 +9,7 @@ const nextBtn = document.getElementById("nextBtn");
 
 // Variáveis para controle de estado
 let characters = [];
-let currentIndex = -1;
+let currentIndex = 0;
 
 // Mapeamento de casas para classes CSS
 const casas = {
@@ -23,6 +23,8 @@ const casas = {
 async function buscaPersonagem() {
     const response = await fetch("https://hp-api.onrender.com/api/characters");
     characters = await response.json();
+    
+    mostraPersonagem(currentIndex);
 }
 
 // Função para alterar o tema com base na casa
