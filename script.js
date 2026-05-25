@@ -122,7 +122,7 @@ async function buscaPersonagem() {
 
     characters = data;
     mostraPersonagem(currentIndex);
-    console.log(response);
+    // console.log(response);
   } catch (error) {
     console.error("⚠️ Falha ao acessar os registros de Hogwarts:", error);
 
