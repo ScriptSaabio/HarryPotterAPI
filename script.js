@@ -184,7 +184,7 @@ function mostraPersonagem(index) {
 
   // Alterar o tema com base na casa
   const house = character.house;
-  console.log("Casa do personagem:", house); // Debug: Verificar o valor da casa
+  // console.log("Casa do personagem:", house); // Debug: Verificar o valor da casa
 
   if (house && house.trim() !== "") {
     mudaTema(house);
